@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main(void) {
+
+	int a, i;
+	int count = 0;
+
+	cin >> a;
+	i = a;
+	do {
+	
+		a = (a % 10) * 10 + ((a / 10) + (a % 10)) % 10;
+		count++;
+
+		if (a == i)
+		{
+			break;
+		}
+	} while (i != a);
+	cout << count;
+}
