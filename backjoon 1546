@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	
+	int num;
+	double result=0;
+	double tmp=0;
+
+	cin >> num;
+
+	double avg[1000];
+
+	for (int i = 0; i < num; i++)
+	{
+		cin >> avg[i];
+		if (tmp < avg[i])
+		{
+			tmp = avg[i];
+		}
+	}
+
+
+
+	for (int i = 0; i < num; i++)
+	{
+		avg[i] = (avg[i] / tmp * 100.0);
+		result += avg[i]/(double)num;
+
+	}
+
+	cout << result;
+
+
+	return 0; 
+}
