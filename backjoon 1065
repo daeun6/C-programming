@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int han(int n)
+{
+	int hun, ten, one;
+	int result = 0;
+	if (n < 100)
+		return n;
+	else {
+		for (int i = 100; i <= n; i++) {
+			hun = i / 100;
+			ten = (i % 100) / 10;
+			one = (i % 100) % 10;
+			int dif1, dif2;
+			dif1 = hun - ten;
+			dif2 = ten - one;
+
+			if (dif1 == dif2)
+				result++;
+		}
+	}
+	return result + 99;
+
+}
+int main() {
+
+	int num;
+	cin >> num;
+	cout << han(num) << endl;
+	return 0;
+}
