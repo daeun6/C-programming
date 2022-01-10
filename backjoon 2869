@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+
+
+int main() {
+
+	int a, b, v; //최종적으로 가야하는 거리는 v-a임, 도착하면 미끄러지지 않기 때문 
+	int day = 0;
+
+	cin >> a >> b >> v;
+
+	int c = a - b;
+
+	if ((v - b) % c == 0)
+		day = (v - b) / c;
+	
+	else
+		day = (v - b) / c+1;
+
+	cout << day;
+
+	return 0; 
+}
