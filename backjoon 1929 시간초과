@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+#include<cmath>
+#define NUM 1000000
+
+
+int main() {
+
+	int begin, end;
+	bool arr[NUM + 1] = { false };
+
+	cin >> begin >> end;
+
+	arr[1] = true;
+
+	for (int i = 2; i < sqrt(NUM); i++)
+	{
+		if (arr[i] == false)
+		{
+			for (int j = i + i; j <= NUM; j += i)//배수(i)만큼 증가하면서 배수를 true로 바꿔줌
+			{
+				arr[j] = true;
+			}
+		}
+	}
+
+	for (int i = begin; i <= end; i++)
+	{
+		if (arr[i] == false)
+			cout << i<< endl;
+	}
+}
