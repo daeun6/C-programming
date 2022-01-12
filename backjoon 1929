@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+#include<cmath>
+
+
+
+int main() {
+    int begin, end;
+   
+    cin >> begin;
+    cin >> end;
+
+    bool* arr = new bool[end + 1];
+
+    fill_n(arr, end + 1, 1);
+    arr[0] = false;
+    arr[1] = false;
+
+    for (int i = 2; i <= sqrt(end); i++)
+        if (arr[i] == true)
+            for (int j = i +i; j <= end; j += i)
+                arr[j] = false;
+
+    for (int i = begin; i <= end; i++)
+        if (arr[i] == true)
+            cout << i << "\n";
+    return 0;
+}
