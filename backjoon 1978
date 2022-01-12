@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+
+
+int main() {
+
+	int n=0, test=0, result=0;
+
+	cin >> n;
+	int* p = new int[n];
+
+	if (n < 2)
+		cout << n;
+
+	else 
+	{
+		for (int i = 0; i < n; i++)
+		{
+			cin >> p[i];
+		} 
+	}
+
+	for (int i = 0; i <= n; i++)
+	{
+		for (int j = 1; j <= p[i]; j++)
+		{
+			if (p[i] % j == 0)
+				test++; 
+		}
+		if (test == 2)
+			result++;
+		test = 0;
+	}
+
+
+	cout << result;
+	return 0;
+
+	delete p;
+
+}
