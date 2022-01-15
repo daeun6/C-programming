@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+int sum(int num)
+{
+	int a = num;
+
+	while(num>0)
+	{
+		a += num % 10;
+		num /= 10;
+	}
+	return a;
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	for (int i = 1; i < n; i++)
+	{
+		
+		if (sum(i) == n) {
+			cout << i;
+			return 0;
+		}
+	}
+
+	cout << 0;
+}
