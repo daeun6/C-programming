@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+//0의 개수는 해당 숫자에서 -2, 1의 개수는 해당 숫자에서 -1
+
+int main() {
+
+	int fibo[41] = { 0,1,1 };
+	
+	for (int i = 3; i < 41; i++)
+	{
+		fibo[i] = fibo[i - 2] + fibo[i - 1]; //1의 개수
+	}
+
+	int n;
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		int a;
+		cin >> a;
+		if (a == 0)
+			cout << "1 0\n";
+		else if (a == 1)
+			cout << "0 1\n";
+		else
+			cout << fibo[a - 1] << " " << fibo[a] << "\n";
+	}
+}
