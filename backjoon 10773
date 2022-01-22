@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+#include<stack>
+using namespace std;
+
+int main() {
+	int k,num,result=0;
+	cin >> k;
+	stack<int>v;
+
+	for (int i = 0; i < k; i++)
+	{
+		cin >> num;
+		if (num == 0)
+		{
+			v.pop();
+		}
+		else
+		{
+			v.push(num);
+		}
+	}
+
+	for (int i = v.size(); !v.empty(); i--)
+	{
+		result += v.top();
+		v.pop();
+	}
+	cout << result << endl;
+
+	return 0;
+}
