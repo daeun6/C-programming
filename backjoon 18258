@@ -1,0 +1,76 @@
+#include<iostream>
+#include<string>
+#include<queue>
+
+using namespace std;
+
+int main() {
+	cin.tie(NULL);
+	cin.sync_with_stdio(false);
+	int n;
+	string a;
+	queue<int>v;
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a;
+		if (a == "push")
+		{
+			int num;
+			cin >> num;
+			v.push(num);
+		}
+		else if (a == "pop")
+		{
+			if (!v.empty())
+			{
+				cout << v.front() << "\n";
+				v.pop();
+			}
+			else
+			{
+				cout << "-1"<<"\n";
+			}
+		}
+		else if (a == "size")
+		{
+			cout << v.size() << "\n";
+
+		}
+		else if (a == "empty")
+		{
+			if (!v.empty())
+			{
+				cout << "0" << "\n";
+			}
+			else
+			{
+				cout << "1" << "\n";
+			}
+		}
+		else if (a == "front")
+		{
+			if (!v.empty())
+			{
+				cout << v.front() << "\n";
+			}
+			else
+			{
+				cout << "-1" << "\n";
+			}
+		}
+		else if (a == "back")
+		{
+			if (!v.empty())
+			{
+				cout << v.back() << "\n";
+			}
+			else
+			{
+				cout << "-1" << "\n";
+			}
+		}
+	}
+	return 0;
+}
